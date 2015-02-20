@@ -12,6 +12,41 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
+    // start a new game by clicking "New Game" button
+    $(document).on("click", ".new", function(){
+      location.reload(true);
+    });
+
+    // creates a random # 1 - 100
+    function getRandomNumber() {
+      return Math.floor(Math.random() * 100) + 1;
+    }
+
+    // stores the random number
+    var randomNumber = getRandomNumber();
+    $("#guessButton").click(function() {
+      var userGuess = $("#feedback").empty();
+
+      // checks to see how close user is to random #
+      if (userGuess < randomNumber) {
+        // alert("Too low");
+        $("#feedback").text("Too low");
+      } else if (userGuess > randomNumber) {
+        // alert("Too high");
+        $("#feedback").text("Too high");
+      } else {
+        // alert("Just right!!!");
+        $("#feedback").text("Just right!!!");
+      }
+
+    // increments count when button clicked
+    var count = 0;
+    $("#guessButton").click(function() {
+      count++;
+      $("#count").html(count);
+    });
+
+  });
 });
 
 
