@@ -30,13 +30,13 @@ $(document).ready(function(){
       // checks to see how close user is to random #
       if (userGuess < randomNumber) {
         // alert("Too low");
-        $("#feedback").text("Too low");
+        $("#feedback").html("Too low");
       } else if (userGuess > randomNumber) {
         // alert("Too high");
-        $("#feedback").text("Too high");
+        $("#feedback").html("Too high");
       } else {
         // alert("Just right!!!");
-        $("#feedback").text("Just right!!!");
+        $("#feedback").html("Just right!!!");
       }
 
     // increments count when button clicked
