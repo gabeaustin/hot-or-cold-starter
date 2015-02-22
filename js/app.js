@@ -28,15 +28,15 @@ $(document).ready(function(){
   $("#guessButton").click(function() {
     var userGuess = $("#userGuess").val();
 
-    //Feedback logic
+    // feedback logic
     var result = checkNumber(randomNumber, userGuess);
     $("#feedback").html(result);
 
-    //Count logic
+    // count logic
     count++;
     $("#count").html(count);
 
-    //add guess number as list
+    // add guess number as list
     $("ul#guessList").append("<li>" + userGuess + "</li>");
 
   });
